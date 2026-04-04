@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Robotics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="index.html">Team Name Placeholder</a>
+      <div class="site-nav__links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="ourteam.html">Meet the team</a>
+        <a href="contact.html">Contact</a>
+        <a href="sponser.html">Sponser</a>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__team-name">Team Name Placeholder</span>
+        <span class="hero__team-number">FRC #0000</span>
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section" aria-labelledby="about-heading">
+      <div class="about-section__inner">
+        <div class="about-section__text about-section__panel">
+          <h2 id="about-heading">About the team</h2>
+          <p>
+            placeholder text for about the team
+          </p>
+          <p>
+            placeholder text for about mentors
+          </p>
+        </div>
+        <div class="album" role="region" aria-roledescription="carousel" aria-label="Team photo album" tabindex="0">
+          <div class="album__viewport">
+            <ul class="album__track" id="album-track">
+              <li class="album__slide is-active" data-index="0">
+                <img src="placeholder.png" alt="Team photo placeholder 1" width="640" height="480" loading="eager" />
+              </li>
+              <li class="album__slide" data-index="1">
+                <img src="placeholder.png" alt="Team photo placeholder 2" width="640" height="480" loading="lazy" />
+              </li>
+              <li class="album__slide" data-index="2">
+                <img src="placeholder.png" alt="Team photo placeholder 3" width="640" height="480" loading="lazy" />
+              </li>
+              <li class="album__slide" data-index="3">
+                <img src="placeholder.png" alt="Team photo placeholder 4" width="640" height="480" loading="lazy" />
+              </li>
+              <li class="album__slide" data-index="4">
+                <img src="placeholder.png" alt="Team photo placeholder 5" width="640" height="480" loading="lazy" />
+              </li>
+              <li class="album__slide" data-index="5">
+                <img src="placeholder.png" alt="Team photo placeholder 6" width="640" height="480" loading="lazy" />
+              </li>
+              <li class="album__slide" data-index="6">
+                <img src="placeholder.png" alt="Team photo placeholder 7" width="640" height="480" loading="lazy" />
+              </li>
+            </ul>
+          </div>
+          <div class="album__controls">
+            <button type="button" class="album__btn album__btn--prev" id="album-prev" aria-label="Previous photo">❮</button>
+            <span class="album__counter" id="album-counter" aria-live="polite">1 / 7</span>
+            <button type="button" class="album__btn album__btn--next" id="album-next" aria-label="Next photo">❯</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="robots-section" aria-labelledby="robots-heading">
+      <div class="robots-section__inner">
+        <h2 id="robots-heading">Our robots</h2>
+        <div class="robots-grid">
+          <article class="robot-card">
+            <div class="robot-card__photo">
+              <img src="placeholder.png" alt="Robot photo placeholder" width="600" height="400" loading="lazy" />
+            </div>
+            <p class="robot-card__caption">Robot name — season year (placeholder)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Team Name Placeholder</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
