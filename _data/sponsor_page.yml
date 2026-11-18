@@ -1,0 +1,9 @@
+# Wording on the Sponsors page (the logos themselves live in sponsors.yml).
+intro_heading: Our sponsors
+intro:
+  - placeholder text about what sponsorship pays for
+
+donate_heading: How to donate
+donate:
+  - placeholder text about how to donate
+donate_email: team.placeholder@example.com

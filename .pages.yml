@@ -1,0 +1,184 @@
+# Pages CMS configuration (https://pagescms.org).
+# This is what editors see at app.pagescms.org — it maps friendly form fields
+# onto the _data/*.yml files that the site is built from.
+
+media:
+  input: images
+  output: images
+
+content:
+  - name: site
+    label: Site basics
+    type: file
+    path: _data/site.yml
+    fields:
+      - name: team_name
+        label: Team name
+        type: string
+        description: Shown in the top bar, the home page banner and the footer.
+      - name: team_number
+        label: Team number
+        type: string
+        description: For example "FRC #0000".
+      - name: nav
+        label: Navigation links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link text
+            type: string
+          - name: url
+            label: Page file
+            type: string
+            description: Must match a page file name, e.g. index.html
+
+  - name: home
+    label: Home page text
+    type: file
+    path: _data/home.yml
+    fields:
+      - name: about_heading
+        label: "\"About\" heading"
+        type: string
+      - name: about
+        label: About paragraphs
+        type: text
+        list: true
+      - name: robots_heading
+        label: "\"Our robots\" heading"
+        type: string
+
+  - name: album
+    label: Home page photos
+    type: file
+    path: _data/album.yml
+    list: true
+    fields:
+      - name: image
+        label: Photo
+        type: image
+      - name: alt
+        label: Photo description
+        type: string
+        description: Describes the photo for people using a screen reader.
+
+  - name: robots
+    label: Robots
+    type: file
+    path: _data/robots.yml
+    list: true
+    fields:
+      - name: caption
+        label: Caption
+        type: string
+        description: For example "Clutch — 2026".
+      - name: photo
+        label: Photo
+        type: image
+      - name: alt
+        label: Photo description
+        type: string
+
+  - name: mentors
+    label: Mentors
+    type: file
+    path: _data/mentors.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: pronouns
+        label: Pronouns
+        type: string
+        required: false
+        description: Optional. Leave empty to hide.
+      - name: photo
+        label: Photo
+        type: image
+      - name: email
+        label: Email
+        type: string
+        required: false
+        description: Optional. If filled in, this mentor also appears on the Contact page.
+
+  - name: members
+    label: Team members
+    type: file
+    path: _data/members.yml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: pronouns
+        label: Pronouns
+        type: string
+        required: false
+        description: Optional. Leave empty to hide.
+      - name: photo
+        label: Photo
+        type: image
+
+  - name: sponsors
+    label: Sponsor logos
+    type: file
+    path: _data/sponsors.yml
+    list: true
+    fields:
+      - name: name
+        label: Sponsor name
+        type: string
+      - name: logo
+        label: Logo
+        type: image
+      - name: url
+        label: Website
+        type: string
+        required: false
+        description: Optional. If filled in, the logo links here.
+
+  - name: sponsor_page
+    label: Sponsors page text
+    type: file
+    path: _data/sponsor_page.yml
+    fields:
+      - name: intro_heading
+        label: Intro heading
+        type: string
+      - name: intro
+        label: Intro paragraphs
+        type: text
+        list: true
+      - name: donate_heading
+        label: Donate heading
+        type: string
+      - name: donate
+        label: Donate paragraphs
+        type: text
+        list: true
+      - name: donate_email
+        label: Donation email
+        type: string
+
+  - name: contact
+    label: Contact page
+    type: file
+    path: _data/contact.yml
+    fields:
+      - name: mentors_heading
+        label: Mentors heading
+        type: string
+      - name: team_heading
+        label: Team heading
+        type: string
+      - name: team_email
+        label: Team email
+        type: string

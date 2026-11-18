@@ -1,0 +1,15 @@
+# Basic site info. Shown in the top bar, the home page banner and the footer.
+team_name: Mustangs Robotics
+team_number: "FRC #0000"
+
+# The links in the top navigation bar, in order.
+# "url" must match a page file name in the repository.
+nav:
+  - label: Home
+    url: index.html
+  - label: Meet the team
+    url: ourteam.html
+  - label: Contact
+    url: contact.html
+  - label: Sponsors
+    url: sponser.html

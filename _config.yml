@@ -1,0 +1,8 @@
+# Jekyll build settings. GitHub Pages reads this automatically.
+# Day-to-day content is NOT here — it lives in _data/*.yml (see EDITING.md).
+title: Mustangs Robotics
+description: FRC robotics team website
+
+# Keep the editing guide out of the published site.
+exclude:
+  - EDITING.md

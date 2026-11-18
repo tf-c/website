@@ -1,0 +1,10 @@
+# Photos in the home page slideshow. Add, remove or reorder freely.
+# "alt" describes the photo for people using a screen reader.
+- image: images/placeholder.png
+  alt: Team photo placeholder 1
+- image: images/placeholder.png
+  alt: Team photo placeholder 2
+- image: images/placeholder.png
+  alt: Team photo placeholder 3
+- image: images/placeholder.png
+  alt: Team photo placeholder 4

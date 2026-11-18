@@ -1,0 +1,7 @@
+# Mentors. Shown on "Meet the team".
+# Anyone given an "email" is also listed on the Contact page.
+- name: Name placeholder
+  role: Mentor
+  pronouns: Pronouns (optional)
+  photo: images/placeholder.png
+  email: mentor.placeholder@example.com

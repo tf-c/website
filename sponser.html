@@ -1,28 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sponser — Robotics</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="site-nav" aria-label="Main">
-    <div class="site-nav__inner">
-      <a class="site-nav__brand" href="index.html">Team Name Placeholder</a>
-      <div class="site-nav__links">
-        <a href="index.html">Home</a>
-        <a href="ourteam.html">Meet the team</a>
-        <a href="contact.html">Contact</a>
-        <a href="sponser.html" aria-current="page">Sponser</a>
+---
+layout: default
+title: Sponsors
+heading: Sponsors & Donations
+---
+  <main class="contact-main">
+    <section class="contact-section" aria-labelledby="sponsors-heading">
+      <div class="contact-section__inner">
+        <h2 id="sponsors-heading" class="people-section__heading">{{ site.data.sponsor_page.intro_heading }}</h2>
+        <div class="about-section__panel">
+          {%- for paragraph in site.data.sponsor_page.intro %}
+          <p>
+            {{ paragraph }}
+          </p>
+          {%- endfor %}
+        </div>
       </div>
-    </div>
-  </nav>
-  <header class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__title hero__title--page">
-        <span class="hero__team-name">Sponser & Donations</span>
-      </h1>
-    </div>
+    </section>
+
+    {%- if site.data.sponsors.size > 0 %}
+    <section class="robots-section" aria-label="Sponsor logos">
+      <div class="robots-section__inner">
+        <div class="robots-grid">
+          {%- for sponsor in site.data.sponsors %}
+          <article class="robot-card">
+            <div class="robot-card__photo">
+              {%- if sponsor.url and sponsor.url != "" %}
+              <a href="{{ sponsor.url }}" rel="noopener">
+                <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo" width="600" height="400" loading="lazy" />
+              </a>
+              {%- else %}
+              <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo" width="600" height="400" loading="lazy" />
+              {%- endif %}
+            </div>
+            <p class="robot-card__caption">{{ sponsor.name }}</p>
+          </article>
+          {%- endfor %}
+        </div>
+      </div>
+    </section>
+    {%- endif %}
+
+    <section class="contact-section" aria-labelledby="donate-heading">
+      <div class="contact-section__inner">
+        <h2 id="donate-heading" class="people-section__heading">{{ site.data.sponsor_page.donate_heading }}</h2>
+        <div class="email-panel">
+          {%- for paragraph in site.data.sponsor_page.donate %}
+          <p class="email-panel__subtitle">{{ paragraph }}</p>
+          {%- endfor %}
+          {%- if site.data.sponsor_page.donate_email and site.data.sponsor_page.donate_email != "" %}
+          <p class="email-panel__line">
+            <span class="email-panel__label">Email:</span>
+            <a href="mailto:{{ site.data.sponsor_page.donate_email }}">{{ site.data.sponsor_page.donate_email }}</a>
+          </p>
+          {%- endif %}
+        </div>
+      </div>
+    </section>
+  </main>

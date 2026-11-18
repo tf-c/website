@@ -1,92 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team — Robotics</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="site-nav" aria-label="Main">
-    <div class="site-nav__inner">
-      <a class="site-nav__brand" href="index.html">Mustangs Robotics</a>
-      <div class="site-nav__links">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="ourteam.html">Meet the team</a>
-        <a href="contact.html">Contact</a>
-        <a href="sponser.html">Sponser</a>
-      </div>
-    </div>
-  </nav>
-  <header class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__title">
-        <span class="hero__team-name">Team Name Placeholder</span>
-        <span class="hero__team-number">FRC #0000</span>
-      </h1>
-    </div>
-  </header>
-
+---
+layout: default
+title: Home
+home: true
+---
   <main>
     <section class="about-section" aria-labelledby="about-heading">
       <div class="about-section__inner">
         <div class="about-section__text about-section__panel">
-          <h2 id="about-heading">About the team</h2>
+          <h2 id="about-heading">{{ site.data.home.about_heading }}</h2>
+          {%- for paragraph in site.data.home.about %}
           <p>
-            placeholder text for about the team
+            {{ paragraph }}
           </p>
-          <p>
-            placeholder text for about mentors
-          </p>
+          {%- endfor %}
         </div>
+        {%- if site.data.album.size > 0 %}
         <div class="album" role="region" aria-roledescription="carousel" aria-label="Team photo album" tabindex="0">
           <div class="album__viewport">
             <ul class="album__track" id="album-track">
-              <li class="album__slide is-active" data-index="0">
-                <img src="placeholder.png" alt="Team photo placeholder 1" width="640" height="480" loading="eager" />
+              {%- for photo in site.data.album %}
+              <li class="album__slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}">
+                <img src="{{ photo.image }}" alt="{{ photo.alt }}" width="640" height="480" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" />
               </li>
-              <li class="album__slide" data-index="1">
-                <img src="placeholder.png" alt="Team photo placeholder 2" width="640" height="480" loading="lazy" />
-              </li>
-              <li class="album__slide" data-index="2">
-                <img src="placeholder.png" alt="Team photo placeholder 3" width="640" height="480" loading="lazy" />
-              </li>
-              <li class="album__slide" data-index="3">
-                <img src="placeholder.png" alt="Team photo placeholder 4" width="640" height="480" loading="lazy" />
-              </li>
-              </li>
+              {%- endfor %}
             </ul>
           </div>
           <div class="album__controls">
             <button type="button" class="album__btn album__btn--prev" id="album-prev" aria-label="Previous photo">❮</button>
-            <span class="album__counter" id="album-counter" aria-live="polite">1 / 7</span>
+            <span class="album__counter" id="album-counter" aria-live="polite">1 / {{ site.data.album.size }}</span>
             <button type="button" class="album__btn album__btn--next" id="album-next" aria-label="Next photo">❯</button>
           </div>
         </div>
+        {%- endif %}
       </div>
     </section>
 
+    {%- if site.data.robots.size > 0 %}
     <section class="robots-section" aria-labelledby="robots-heading">
       <div class="robots-section__inner">
-        <h2 id="robots-heading">Our robots</h2>
+        <h2 id="robots-heading">{{ site.data.home.robots_heading }}</h2>
         <div class="robots-grid">
+          {%- for robot in site.data.robots %}
           <article class="robot-card">
             <div class="robot-card__photo">
-              <img src="placeholder.png" alt="Robot photo placeholder" width="600" height="400" loading="lazy" />
+              <img src="{{ robot.photo }}" alt="{{ robot.alt | default: robot.caption }}" width="600" height="400" loading="lazy" />
             </div>
-            <p class="robot-card__caption">Robot name — season year (placeholder)</p>
+            <p class="robot-card__caption">{{ robot.caption }}</p>
           </article>
+          {%- endfor %}
         </div>
       </div>
     </section>
+    {%- endif %}
   </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Mustangs Robotics</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>

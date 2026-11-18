@@ -1,0 +1,4 @@
+# Contact page. Mentor addresses come from mentors.yml (anyone with an "email").
+mentors_heading: Mentors
+team_heading: Contact
+team_email: team.placeholder@example.com

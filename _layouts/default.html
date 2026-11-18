@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — {{ site.data.site.team_name }}</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="index.html">{{ site.data.site.team_name }}</a>
+      <div class="site-nav__links">
+        {%- for item in site.data.site.nav %}
+        <a href="{{ item.url }}"{% if item.url == page.name %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__title{% unless page.home %} hero__title--page{% endunless %}">
+        <span class="hero__team-name">{{ page.heading | default: site.data.site.team_name }}</span>
+        {%- if page.home %}
+        <span class="hero__team-number">{{ site.data.site.team_number }}</span>
+        {%- endif %}
+      </h1>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> {{ site.data.site.team_name }}</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

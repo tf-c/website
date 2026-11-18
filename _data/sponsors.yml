@@ -1,0 +1,5 @@
+# Sponsor logos, shown on the Sponsors page.
+# "url" is optional — if set, the logo links to the sponsor's website.
+- name: Sponsor name placeholder
+  logo: images/placeholder.png
+  url: ""
